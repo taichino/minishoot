@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "space.h"
+#include "minishoot.h"
 
 static int frameCnt = 0;
 
