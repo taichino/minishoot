@@ -3,6 +3,7 @@
 
 AC_PREREQ(2.59)
 AC_INIT(minishoot, 1.0, taichino@gmail.com)
+AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/minishoot.h])
 AC_CONFIG_HEADER([config.h])
 
