@@ -17,7 +17,7 @@ This is sample game for practice ncurses
 
 %prep
 echo "prep phase"
-%setup
+%setup -n minishoot
 
 %build
 echo "build phase"
