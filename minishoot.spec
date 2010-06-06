@@ -1,8 +1,8 @@
 %define name    minishoot
 %define version 1.0
 %define release 1
-%define prefix /usr/local/games
-%define buildroot %{_topdir}/%{name}-%{version}-root
+%define buildroot %{_tmppath}/%{name}-%{version}-root
+%define _prefix /usr/local
 
 Summary: this is a sample game for practice ncurses
 Name: %{name} 
@@ -23,16 +23,18 @@ echo "prep phase"
 
 %build
 echo "build phase"
-./configure
+./configure 
 make
 
 %install 
 echo "install phase"
-make -e bindir=${RPM_BUILD_ROOT}%{prefix} install
+rm -rf $RPM_BUILD_ROOT
+%makeinstall
 
 %clean
 echo "clean phase"
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf $RPM_BUILD_ROOT
 
 %files
-%{prefix}/minishoot
+%defattr(-,root,root)
+/usr/local/games/minishoot
